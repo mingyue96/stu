@@ -1,0 +1,25 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: consumer-hystrix
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
+logging:
+  level:
+    root: INFO
+
+        
+ribbon:  
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+ 
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeout-in-milliseconds: 3000
